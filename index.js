@@ -4,12 +4,11 @@ const cors=require("cors");
 const connection = require('./db');
 const { empRoutes } = require('./routes/empl.routes');
 const app=express();
-app.use(cors());
 app.use(express.json());
 app.use(empRoutes);
 
 
-
+app.use(cors());
 
 app.listen(process.env.port||8080,async()=>{
 
