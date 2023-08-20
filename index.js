@@ -5,7 +5,7 @@ const connection = require('./db');
 const { empRoutes } = require('./routes/empl.routes');
 console.log(cors)
 const app=express();
-app.use(cors({ origin: true }));
+app.use(cors({ credentials:true,origin: true,exposedHeaders: '*' }));
 app.use(express.json());
 
 
