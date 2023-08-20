@@ -13,7 +13,7 @@ const addEmp=async(req,res)=>{
             res.status(400).json({msg:"Please fill all the required fields",success:false});
         }else{
     
-            const empAvailable=empModel.findOne({email});
+            const empAvailable=await empModel.findOne({email});
     
             if(empAvailable){
                 res.status(200).json({msg:"Employee already added",success:false});
