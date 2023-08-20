@@ -40,7 +40,7 @@ const getEmp=async(req,res)=>{
 
     try {
 
-        const employee=empModel.find();
+        const employee=await empModel.find();
         res.status(200).json({data:employee,success:true})
     
         
