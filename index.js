@@ -3,11 +3,9 @@ require("dotenv").config();
 const cors=require("cors");
 const connection = require('./db');
 const { empRoutes } = require('./routes/empl.routes');
-console.log(cors)
 const app=express();
-app.use(cors({ credentials:true,origin: true,exposedHeaders: '*' }));
 app.use(express.json());
-
+app.use(cors());
 
 app.use(empRoutes);
 
