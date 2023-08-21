@@ -1,13 +1,9 @@
 const express=require('express');
-require("dotenv").config();
 const cors=require("cors");
 const connection = require('./db');
-const { empRoutes } = require('./routes/empl.routes');
 const app=express();
 app.use(express.json());
 app.use(cors());
-
-app.use(empRoutes);
 
 
 app.listen(process.env.port||8080,async()=>{
